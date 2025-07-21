@@ -1,0 +1,36 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'de.hkuhn'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Apache Tika core library
+    implementation 'org.apache.tika:tika-core:3.2.1'
+    implementation 'org.apache.tika:tika-parsers-standard-package:3.2.1'
+
+    // Langchain4j (core and LLMs support)
+    implementation 'dev.langchain4j:langchain4j:1.1.0'
+    implementation 'dev.langchain4j:langchain4j-azure-open-ai:1.1.0-rc1'
+
+    // Logging (optional, but recommended)
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.13'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+}
+
+
+test {
+    useJUnitPlatform()
+}
